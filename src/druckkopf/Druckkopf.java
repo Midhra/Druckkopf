@@ -4,8 +4,12 @@
  * and open the template in the editor.
  */
 package druckkopf;
-import java.io.*;
-import java.net.*;
+
+import java.io.BufferedReader;
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.Socket;
 
 /**
  *
@@ -37,12 +41,6 @@ public class Druckkopf {
             
             while (exit == false) {
                 exit = warten();
-//                try {
-//                    Thread.sleep(1000);
-//                }
-//                catch (InterruptedException e) {
-//                    System.out.println(e.getMessage() + 'n');
-//                }
             }
             panelSocket.close();
         }
@@ -84,9 +82,8 @@ public class Druckkopf {
     }
     public static int print(int x, int y, int z, String farbe) {
         try {
-            //Zufallszahl fuer Probleme ... Wahrscheinlichkeit 1/10
+//            Zufallszahl fuer Probleme ... Wahrscheinlichkeit 1/10
             int random = (int)(Math.random()*10);
-            System.out.println("Zufallszahl: " + random);
             if (random == 5) {
                 return -1;
             }
